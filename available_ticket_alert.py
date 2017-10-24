@@ -10,7 +10,7 @@ while(True):
     soup = BeautifulSoup(res.content, 'html.parser')
     panel_sold = soup.find_all("div", { "class" : "listing-panel-info__status hide-small hide-medium l-mar-left-2" })
     text_at_div = panel_sold[0].get_text().strip()
-    print(text_at_div)
+    print(text_at_div, time.strftime("%H:%M:%S"))
     if text_at_div != "Sold Out":
         alert.play()
         webbrowser.open(url)
