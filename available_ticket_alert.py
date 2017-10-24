@@ -1,4 +1,4 @@
-import requests, time, vlc
+import requests, time, vlc, webbrowser
 from bs4 import BeautifulSoup
 
 url = 'https://www.eventbrite.com/e/uygulamal-teknik-siber-guvenlik-egitimi-tickets-39004117365'
@@ -13,5 +13,6 @@ while(True):
     print(text_at_div)
     if text_at_div != "Sold Out":
         alert.play()
+        webbrowser.open(url)
     time.sleep(3)
     alert.stop()
